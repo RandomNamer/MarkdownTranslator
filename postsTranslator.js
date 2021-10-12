@@ -16,16 +16,16 @@ const proxy = {
     host: "127.0.0.1",
     port: 7890,
 };
-const sourceLanguage = "zh-CN";
-const destLanguage = "en";
+const sourceLanguage = "en";
+const destLanguage = "zh-CN";
 const insertAutoTransMark = true
 const autoTranslationMark = "auto_translation: true\n"
 const isDebug = true;
 
 
 
-const articlePath = "./source/_posts/blog-with-hexo-and-gh-pages.md";
-const newArticlePath = "./test/";
+const articlePath = "./README.md";
+const newArticlePath = "./";
 translate(articlePath, newArticlePath);
 
 /**
@@ -33,7 +33,7 @@ translate(articlePath, newArticlePath);
  * @param  {string} newArticlePath
  * @returns {boolean}
  */
-export function translate(articlePath, newArticlePath) {
+function translate(articlePath, newArticlePath) {
     fs.readFile(articlePath, "utf-8", (err, data) => {
         if (err) {
             console.error(err);
